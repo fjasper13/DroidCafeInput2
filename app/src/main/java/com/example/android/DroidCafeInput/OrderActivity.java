@@ -35,7 +35,7 @@ import android.widget.AdapterView;
  * with the intent to launch this activity.
  */
 public class OrderActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-
+//adapter buat menghubungkan data, yang tersedia 4, yang ditampilin 1.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,13 +55,14 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
             spinner.setOnItemSelectedListener(this);
         }
         ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this,
-                R.array.labels_array,android.R.layout.simple_spinner_item);
+                R.array.labels_array,android.R.layout.simple_spinner_item);//isi array ditampilin di sebuah layout
 
         adapter.setDropDownViewResource
-                (android.R.layout.simple_spinner_dropdown_item);
+                (android.R.layout.simple_spinner_dropdown_item);//bikin panah bawahnya
         if (spinner != null) {
             spinner.setAdapter(adapter);
         }
+
     }
 
     public void displayToast(String message){
@@ -101,4 +102,6 @@ public class OrderActivity extends AppCompatActivity implements AdapterView.OnIt
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+
 }
